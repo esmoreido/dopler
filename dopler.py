@@ -54,13 +54,12 @@ def ens_proc(ens, ensnum, ensdist, ensh, enslat, enslon, topq, botq):
     df.drop(['bs1', 'bs2', 'bs3', 'bs4'], inplace = True, axis=1) # удаляем ненужные колонки рассеяния
     df['ens'] = ensnum # добавляем номер ансамбля
     df['dist'] = ensdist # добавляем расстояние от уреза
-    df['h'] = ensh
-    df['lat'] = enslat
-    df['lon'] = enslon
-    # df['top_q'] = topq
-    # df['bot_q'] = botq
+    df['h'] = ensh # общая глубина
+    df['lat'] = enslat # широта
+    df['lon'] = enslon # долгота
     df['v'] = df['v'].values * 0.01 # переводим скрость в метры в секунду
-    df = df.round(3)
+    to_round = [col for col in df.columns if not 'lat' in col and not 'lon' in col]
+    df[to_round] = df[to_round].round(3)
     res = pd.melt(df, id_vars=['ens', 'dist', 'lon', 'lat', 'hb', 'h']) # переформатируем в длинный формат
     return res
 
@@ -105,6 +104,5 @@ if __name__ == "__main__":
     print("Detected ASCII *.txt files: \n", "\n".join(ff))
     for f in ff:
         file_in = f
-        # file_out = f.replace("txt", "csv")
         file_out = re.sub(r'(?i)txt', 'csv', f)
         file_proc(file_in, file_out)
