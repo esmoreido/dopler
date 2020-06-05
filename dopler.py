@@ -1,17 +1,18 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
-import os
-import glob
-import numpy as np
-import time
 import datetime
+import glob
+import os
+import re
 from datetime import date, timedelta
+from os.path import splitext
+
+import numpy as np
+import pandas as pd
 import time
 # import more_itertools
 from itertools import islice
-import pandas as pd
-import re
-from os.path import splitext
+
 
 def get_chunk(file, n):
     return [x.strip() for x in islice(file, n)]
