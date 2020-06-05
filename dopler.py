@@ -107,7 +107,6 @@ def file_proc(path_in, path_out):
 
 # главный модуль
 if __name__ == "__main__":
-    os.chdir(r'c:\temp\doppler')
     ff = glob.glob("*.txt")
     print("Detected ASCII *.txt files: \n", "\n".join(ff))
     for f in ff:
