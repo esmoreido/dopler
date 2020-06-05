@@ -51,10 +51,10 @@ def ens_proc(ens, ensnum, ensdist, ensh, enslat, enslon, topq, botq):
 
     res = {}
     df = pd.DataFrame([x.split() for x in ens], columns= ['hb', 'v', 'd', 'v1', 'v2', 'v3', 'v4',
-                                                          'bs1', 'bs2', 'bs3', 'bs4', 'percgood', 'q'])
+                                                          'bs1', 'bs2', 'bs3', 'bs4', 'percgood', 'q'], dtype='float')
     rmcols = ['v1', 'v2', 'v3', 'v4', 'percgood', 'q'] # ненужные колонки
     df.drop(rmcols, inplace = True, axis=1) # удаляем ненужные
-    df = df.replace(dict.fromkeys(['-32768', '2147483647', '255'], np.nan)) # замена отсутствующих данных
+    df = df.replace(dict.fromkeys([-32768, 2147483647, 255], np.nan)) # замена отсутствующих данных
     df = df.dropna() # удаляем отсутствующие
     df['bs'] = df[['bs1', 'bs2', 'bs3', 'bs4']].mean(axis=1) # считаем среднее рассеяние
     df.drop(['bs1', 'bs2', 'bs3', 'bs4'], inplace = True, axis=1) # удаляем ненужные колонки рассеяния
@@ -107,6 +107,7 @@ def file_proc(path_in, path_out):
 
 # главный модуль
 if __name__ == "__main__":
+    os.chdir(r'c:\temp\doppler')
     ff = glob.glob("*.txt")
     print("Detected ASCII *.txt files: \n", "\n".join(ff))
     for f in ff:
