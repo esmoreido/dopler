@@ -1,6 +1,7 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
-
+import os
+import glob
 import numpy as np
 import time
 import datetime
@@ -9,14 +10,7 @@ import time
 # import more_itertools
 from itertools import islice
 import pandas as pd
-from scipy.interpolate import griddata
-from mpl_toolkits.mplot3d import Axes3D
-import matplotlib.pyplot as plt
-from matplotlib import cm
-import seaborn as sns
-# from mayavi import mlab
-import os
-import glob
+import re
 from os.path import splitext
 
 def get_chunk(file, n):
@@ -111,5 +105,6 @@ if __name__ == "__main__":
     print("Detected ASCII *.txt files: \n", "\n".join(ff))
     for f in ff:
         file_in = f
-        file_out = f.replace("txt", "csv")
+        # file_out = f.replace("txt", "csv")
+        file_out = re.sub(r'(?i)txt', 'csv', f)
         file_proc(file_in, file_out)
