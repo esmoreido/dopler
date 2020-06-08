@@ -86,12 +86,12 @@ def file_proc(path_in, path_out):
 
 
 if __name__ == "__main__":
-    ff = glob.glob("*.txt")
+    ff = glob.glob("*_ASC.txt")
     if not ff:
         print('No files to convert.')
         exit()
     else:
-        print("Detected ASCII *.txt files: \n", "\n".join(ff))
+        print("Detected ASCII *_ASC.txt files: \n", "\n".join(ff))
         for f in ff:
             file_in = f
             file_out = re.sub(r'(?i)txt', 'csv', f)
