@@ -1,6 +1,6 @@
 # dopler
 Программа для преобразования файлов ASCII Output формата RDInstruments WinRiver2 до отдельных значений характеристик по ячейкам. 
-Если вы хотите посмотреть код, склонируйте или скачайте его. **Если вы хотите просто преобразовать свои файлы - скачайте dopler.exe и запустите в папке с вашими файлами.**
+Если вы хотите посмотреть код, склонируйте или скачайте его. **Если вы хотите просто преобразовать свои файлы - скачайте [dopler.exe](https://www.dropbox.com/s/0ijp8c2ktmwccw5/dopler.exe?dl=0) и запустите в папке с вашими файлами.**
 
 ## Проверено на файлах
 - RioGrande WorkHorse 600 kHz
@@ -31,7 +31,7 @@ ens,dist,hb,h,variable,value
 - bs: значение обратного рассеяния, дБ
 
 # Python tool for TRDI RioGrande ADCP ASCII files processing
-Simply converts generic ASCII Output from RDInstruments WinRiver2 software to csv files. If you want to see through the code, clone or download it. **If you simply want to convert your files, donload dopler.exe and run it in a folder with your ASCII files.**
+Simply converts generic ASCII Output from RDInstruments WinRiver2 software to csv files. If you want to see through the code, clone or download it. **If you simply want to convert your files, donload [dopler.exe](https://www.dropbox.com/s/0ijp8c2ktmwccw5/dopler.exe?dl=0) and run it in a folder with your ASCII files.**
 
 ## Output format
 ```
