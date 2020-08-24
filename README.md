@@ -1,5 +1,5 @@
 # dopler
-Программа для преобразования файлов ASCII Output формата RDInstruments WinRiver2 до отдельных значений характеристик по ячейкам. 
+Программа для преобразования файлов Classic ASCII Output формата RDInstruments WinRiver II до отдельных значений характеристик по ячейкам. Чтобы получить исходные файлы для обработки, в программе WinRiver II включите Classic ASCII Output через File > Configure > ASCII Output > Classic ASCII Output, после чего переработайте все необходимые трансекты во всех требуемых измерениях. Полученные файлы `*_ASC.txt` будут корректно обработаны. 
 Если вы хотите посмотреть код, склонируйте или скачайте его. **Если вы хотите просто преобразовать свои файлы - скачайте [dopler.exe](https://bit.ly/dopler_v01) и запустите в папке с вашими `*_ASC.txt` файлами.**
 
 ## Проверено на файлах
@@ -37,7 +37,7 @@ ens,dist,lon,lat,hb,h,variable,value
 - bs: значение обратного рассеяния, дБ
 
 # Python tool for TRDI RioGrande ADCP ASCII files processing
-Simply converts generic ASCII Output from RDInstruments WinRiver2 software to csv files. If you want to see through the code, clone or download it. **If you simply want to convert your files, donload [dopler.exe](https://bit.ly/dopler_v01) and run it in a folder with your `*_ASC.txt` ASCII files.**
+Simply converts Classic ASCII Output from RDInstruments WinRiver2 software to csv files. To create these, in the WinRiver II software enable the Classic ASCII Output by going File > Configure > ASCII Output > Classic ASCII Output. Reprocess all the required transects in all required measurements to get the input `*_ASC.txt` files. If you want to look through the code, clone or download it. **If you simply want to convert your files, donload [dopler.exe](https://bit.ly/dopler_v01) and run it in a folder with your `*_ASC.txt` ASCII files.**
 
 ## Output format
 ```
